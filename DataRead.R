@@ -2,7 +2,8 @@
 																						
 library(readxl)																						
 library(cellranger)																						
-																						
+
+## Excel file with Name, Tab, Range columns. Blank cells for auto detection of table boundaries.
 address <- read_excel("TestTableAddress.xlsx")																						
 																						
 address[c("StartLetter", "StartNumber", "EndLetter", "EndNumber")] <- NA																						
@@ -23,6 +24,4 @@ for (i in 1:nrow(address)) {
 	listofObjs[[i]] <- df																					
 	names(listOfObjs)[i] <- address$Name[i]																					
 	assign(paste(address$Name[i]), df)																					
-}																						
-																						
-## Excel file with Name, Tab, Range columns. Blank cells for auto detection of table boundaries.	
+}
