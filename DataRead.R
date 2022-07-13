@@ -17,9 +17,9 @@ for (i in 1:nrow(address)) {
 listOfObjs <- list()																						
 																						
 for (i in 1:nrow(address)) {																						
-	df <- read_excel("..", sheet = (address$Tab[i]),																					
-								cell_limits(c(address$StartNumber[i], address$StartLetter[i]), c(address$EndNumber[i], address$EndLetter[i])),														
-								col_names = F)														
+	df <- read_excel("..", sheet = (address$Tab[i]),
+			 cell_limits(c(address$StartNumber[i], address$StartLetter[i]), c(address$EndNumber[i], address$EndLetter[i])),
+			 col_names = F)														
 	listofObjs[[i]] <- df																					
 	names(listOfObjs)[i] <- address$Name[i]																					
 	assign(paste(address$Name[i]), df)																					
